@@ -25,7 +25,7 @@ require("./routes/htmlRoutes")(app);
 const db = process.env.MONGODB_URI || "mongodb://localhost/NewsScraper";
 mongoose.connect(db);
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("App running on port 3000!");
 });
 
