@@ -1,30 +1,46 @@
 <div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">NEWS<span id="red">THIEF</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home</a>
           </li>
-          {{/each}}
+          <li class="nav-item">
+            <a class="nav-link" href="/saved">Saved Articles</a>
+          </li>
+            <a class="scrape"><button class="btn btn-success mx-2 my-sm-0" type="submit">SCRAPE NEW ARTICLES!</button></a>
         </ul>
       </div>
+    </nav>
+    <div class="jumbotron text-center">
+      <div class="overlay">
+      </div>
+      <div class="background-image">
+      </div>
+      <div class="caption">
+        <h1>ABC NEWS SCRAPER</h1>
+        <p>A News Scraping Site</p>
+      </div>
     </div>
-  </div>
+    <div class="container-fluid article-container">
+      <div class="alert alert-warning text-center">
+        <h4>Uh Oh. Looks like we don't have any new articles.</h4>
+      </div>
+      <div class="card">
+        <div class="card-header text-center">
+          <h3>What Would You Like To Do?</h3>
+        </div>
+        <div class="card-body text-center">
+          <h4><a class="scrape">Try Scraping New Articles</a></h4>
+          <h4><a href="/saved">Go to Saved Articles</a></h4>
+        </div>
+      </div>
+    </div>
 </div>
+
+<script src="assets/index.js"></script>
